@@ -516,6 +516,9 @@
 </div>
 
 <script>
+// Desregistrar datalabels globalmente — solo se usa en el stacked bar
+Chart.unregister(ChartDataLabels);
+
 const COLORS = {
   Lunes:     '#6b8fbf',
   Martes:    '#8f7db8',
@@ -896,8 +899,4 @@ function showMonth(key) {
   event.target.classList.add('active');
 }
 
-new Chart(document.getElementById('lineChart'), {
-  type: 'line',
-  data: { labels: weekLabels, datasets: lineDatasets },
-  options: {
-    res
+new Chart(document.getElementById
