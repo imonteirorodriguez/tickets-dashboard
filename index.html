@@ -49,16 +49,16 @@
 
   <header>
     <h1>Tickets Diarios por Día de la Semana</h1>
-    <p>Período: 01 Feb 2026 — 28 May 2026 &nbsp;·&nbsp; Fuente: Tks promedio diarios.xlsx</p>
+    <p>Período: 01 Feb 2026 — 04 Jun 2026 &nbsp;·&nbsp; Fuente: Tks promedio diarios.xlsx</p>
   </header>
 
   <div class="kpi-grid">
     <div class="kpi-card" style="--color:#7aabdb"><div class="kpi-label">Lunes</div><div class="kpi-value">207</div><div class="kpi-sub">promedio tks</div></div>
     <div class="kpi-card" style="--color:#b89fdd"><div class="kpi-label">Martes</div><div class="kpi-value">230</div><div class="kpi-sub">promedio tks</div></div>
-    <div class="kpi-card" style="--color:#6dc5b8"><div class="kpi-label">Miércoles</div><div class="kpi-value">244</div><div class="kpi-sub">promedio tks</div></div>
-    <div class="kpi-card" style="--color:#f0a96e"><div class="kpi-label">Jueves</div><div class="kpi-value">257</div><div class="kpi-sub">promedio tks</div></div>
-    <div class="kpi-card" style="--color:#ef8fa8"><div class="kpi-label">Viernes</div><div class="kpi-value">289</div><div class="kpi-sub">promedio tks</div></div>
-    <div class="kpi-card" style="--color:#f0cf6e"><div class="kpi-label">Sábado</div><div class="kpi-value">351</div><div class="kpi-sub">promedio tks</div></div>
+    <div class="kpi-card" style="--color:#6dc5b8"><div class="kpi-label">Miércoles</div><div class="kpi-value">245</div><div class="kpi-sub">promedio tks</div></div>
+    <div class="kpi-card" style="--color:#f0a96e"><div class="kpi-label">Jueves</div><div class="kpi-value">256</div><div class="kpi-sub">promedio tks</div></div>
+    <div class="kpi-card" style="--color:#ef8fa8"><div class="kpi-label">Viernes</div><div class="kpi-value">288</div><div class="kpi-sub">promedio tks</div></div>
+    <div class="kpi-card" style="--color:#f0cf6e"><div class="kpi-label">Sábado</div><div class="kpi-value">350</div><div class="kpi-sub">promedio tks</div></div>
     <div class="kpi-card" style="--color:#b8c4ce"><div class="kpi-label">Domingo</div><div class="kpi-value">—</div><div class="kpi-sub">sin actividad</div></div>
   </div>
 
@@ -80,12 +80,12 @@
     <table>
       <thead><tr><th>Día</th><th>Promedio</th><th>Mínimo</th><th>Máximo</th><th>Total Acum.</th><th>Días de actividad</th></tr></thead>
       <tbody>
-        <tr><td><span class="dot" style="background:#7aabdb"></span>Lunes</td><td><strong>207</strong></td><td>164</td><td>250</td><td>3.103</td><td>15 días</td></tr>
-        <tr><td><span class="dot" style="background:#b89fdd"></span>Martes</td><td><strong>230</strong></td><td>128</td><td>256</td><td>3.683</td><td>16 días</td></tr>
-        <tr><td><span class="dot" style="background:#6dc5b8"></span>Miércoles</td><td><strong>244</strong></td><td>211</td><td>321</td><td>4.155</td><td>17 días</td></tr>
-        <tr><td><span class="dot" style="background:#f0a96e"></span>Jueves</td><td><strong>257</strong></td><td>218</td><td>394</td><td>4.114</td><td>16 días</td></tr>
-        <tr><td><span class="dot" style="background:#ef8fa8"></span>Viernes</td><td><strong>289</strong></td><td>147</td><td>346</td><td>4.327</td><td>15 días</td></tr>
-        <tr><td><span class="dot" style="background:#f0cf6e"></span>Sábado</td><td><strong>351</strong></td><td>307</td><td>393</td><td>5.615</td><td>16 días</td></tr>
+        <tr><td><span class="dot" style="background:#7aabdb"></span>Lunes</td><td><strong>207</strong></td><td>164</td><td>250</td><td>3.319</td><td>16 días</td></tr>
+        <tr><td><span class="dot" style="background:#b89fdd"></span>Martes</td><td><strong>230</strong></td><td>128</td><td>256</td><td>3.913</td><td>17 días</td></tr>
+        <tr><td><span class="dot" style="background:#6dc5b8"></span>Miércoles</td><td><strong>245</strong></td><td>211</td><td>321</td><td>4.406</td><td>18 días</td></tr>
+        <tr><td><span class="dot" style="background:#f0a96e"></span>Jueves</td><td><strong>256</strong></td><td>218</td><td>394</td><td>4.350</td><td>17 días</td></tr>
+        <tr><td><span class="dot" style="background:#ef8fa8"></span>Viernes</td><td><strong>288</strong></td><td>147</td><td>346</td><td>4.608</td><td>16 días</td></tr>
+        <tr><td><span class="dot" style="background:#f0cf6e"></span>Sábado</td><td><strong>350</strong></td><td>307</td><td>393</td><td>5.957</td><td>17 días</td></tr>
         <tr><td><span class="dot" style="background:#b8c4ce"></span>Domingo</td><td>—</td><td>—</td><td>—</td><td>0</td><td>Sin actividad</td></tr>
       </tbody>
     </table>
@@ -98,6 +98,7 @@
     <button class="tab-btn" onclick="showMonth('mar', event)">Marzo</button>
     <button class="tab-btn" onclick="showMonth('abr', event)">Abril</button>
     <button class="tab-btn" onclick="showMonth('may', event)">Mayo</button>
+    <button class="tab-btn" onclick="showMonth('jun', event)">Junio</button>
   </div>
 
   <div id="panel-feb" class="month-panel active">
@@ -120,22 +121,29 @@
   </div>
   <div id="panel-may" class="month-panel">
     <div class="month-grid">
-      <div class="card" style="margin-bottom:0"><h2>Mayo — Promedio por día</h2><p class="subtitle">Datos parciales al 28/05</p><div class="chart-wrap"><canvas id="barMay"></canvas></div></div>
+      <div class="card" style="margin-bottom:0"><h2>Mayo — Promedio por día</h2><p class="subtitle">Mes completo</p><div class="chart-wrap"><canvas id="barMay"></canvas></div></div>
       <div class="card" style="margin-bottom:0"><h2>Mayo — Detalle</h2><p class="subtitle">Promedio tickets (días activos)</p><table><thead><tr><th>Día</th><th>Prom.</th><th>Total</th><th>Distrib.</th></tr></thead><tbody id="tblMay"></tbody></table></div>
+    </div>
+  </div>
+  <div id="panel-jun" class="month-panel">
+    <div class="month-grid">
+      <div class="card" style="margin-bottom:0"><h2>Junio — Promedio por día</h2><p class="subtitle">Datos parciales al 04/06</p><div class="chart-wrap"><canvas id="barJun"></canvas></div></div>
+      <div class="card" style="margin-bottom:0"><h2>Junio — Detalle</h2><p class="subtitle">Promedio tickets (días activos)</p><table><thead><tr><th>Día</th><th>Prom.</th><th>Total</th><th>Distrib.</th></tr></thead><tbody id="tblJun"></tbody></table></div>
     </div>
   </div>
 
   <div class="card" style="margin-top:24px">
     <h2>Evolución Total de Tickets por Mes</h2>
-    <p class="subtitle">Suma total de tickets por mes calendario · Mayo parcial al 28/05</p>
+    <p class="subtitle">Suma total de tickets por mes calendario · Junio parcial al 04/06</p>
     <div class="chart-wrap" style="height:300px"><canvas id="totalMonthLine"></canvas></div>
   </div>
 
-  <div class="kpi-grid" style="grid-template-columns:repeat(4,1fr);margin-top:24px">
+  <div class="kpi-grid" style="grid-template-columns:repeat(5,1fr);margin-top:24px">
     <div class="kpi-card" style="--color:#7aabdb"><div class="kpi-label">Febrero</div><div class="kpi-value" style="font-size:1.6rem">6.177</div><div class="kpi-sub">tickets totales</div></div>
     <div class="kpi-card" style="--color:#6dc5b8"><div class="kpi-label">Marzo</div><div class="kpi-value" style="font-size:1.6rem">6.569</div><div class="kpi-sub">tickets totales</div></div>
     <div class="kpi-card" style="--color:#f0a96e"><div class="kpi-label">Abril</div><div class="kpi-value" style="font-size:1.6rem">6.521</div><div class="kpi-sub">tickets totales</div></div>
-    <div class="kpi-card" style="--color:#ef8fa8"><div class="kpi-label">Mayo <small style="font-size:.6rem">(parcial)</small></div><div class="kpi-value" style="font-size:1.6rem">5.730</div><div class="kpi-sub">tickets al 28/05</div></div>
+    <div class="kpi-card" style="--color:#ef8fa8"><div class="kpi-label">Mayo</div><div class="kpi-value" style="font-size:1.6rem">6.353</div><div class="kpi-sub">tickets totales</div></div>
+    <div class="kpi-card" style="--color:#b89fdd"><div class="kpi-label">Junio <small style="font-size:.6rem">(parcial)</small></div><div class="kpi-value" style="font-size:1.6rem">933</div><div class="kpi-sub">tickets al 04/06</div></div>
   </div>
 
   <div class="card" style="margin-top:24px">
@@ -158,6 +166,7 @@
     <button class="tab-btn" onclick="showCob('cob-mar', event)">Marzo</button>
     <button class="tab-btn" onclick="showCob('cob-abr', event)">Abril</button>
     <button class="tab-btn" onclick="showCob('cob-may', event)">Mayo</button>
+    <button class="tab-btn" onclick="showCob('cob-jun', event)">Junio</button>
   </div>
 
   <div id="cob-feb" class="month-panel active">
@@ -180,6 +189,9 @@
   </div>
   <div id="cob-may" class="month-panel">
     <div class="card"><h2>Mayo</h2><p class="subtitle">Datos aún no disponibles</p></div>
+  </div>
+  <div id="cob-jun" class="month-panel">
+    <div class="card"><h2>Junio</h2><p class="subtitle">Datos aún no disponibles</p></div>
   </div>
 
   <div class="card" style="margin-top:24px">
@@ -329,7 +341,7 @@ const COLORS = {
 };
 
 const dias = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
-const promedios = [206.9, 230.2, 244.4, 257.1, 288.5, 350.9, 0];
+const promedios = [207.4, 230.2, 244.8, 255.9, 288.0, 350.4, 0];
 
 // ── BAR CHART ──────────────────────────────────────────────
 new Chart(document.getElementById('barChart'), {
@@ -352,12 +364,12 @@ new Chart(document.getElementById('barChart'), {
 
 // ── DATOS SEMANALES ────────────────────────────────────────
 const weeklyData = {
-  Lunes:     [213, 247, 0,   231, 197, 250, 195, 240, 164, 191, 189, 188, 202, 194, 198, 204, 0  ],
-  Martes:    [239, 240, 128, 256, 250, 238, 221, 0,   254, 231, 238, 238, 248, 233, 243, 236, 190],
-  Miércoles: [239, 229, 253, 240, 245, 244, 241, 225, 321, 275, 216, 239, 263, 253, 241, 211, 220],
-  Jueves:    [231, 244, 237, 225, 281, 263, 250, 246, 0,   249, 259, 227, 394, 291, 231, 268, 218],
-  Viernes:   [316, 284, 304, 346, 329, 286, 301, 256, 147, 298, 282, 289, 0,   309, 271, 309],
-  Sábado:    [347, 368, 378, 382, 393, 326, 355, 319, 338, 349, 343, 307, 340, 348, 350, 372],
+  Lunes:     [213, 247, 0,   231, 197, 250, 195, 240, 164, 191, 189, 188, 202, 194, 198, 204, 0,   216],
+  Martes:    [239, 240, 128, 256, 250, 238, 221, 0,   254, 231, 238, 238, 248, 233, 243, 236, 190, 230],
+  Miércoles: [239, 229, 253, 240, 245, 244, 241, 225, 321, 275, 216, 239, 263, 253, 241, 211, 220, 251],
+  Jueves:    [231, 244, 237, 225, 281, 263, 250, 246, 0,   249, 259, 227, 394, 291, 231, 268, 218, 236],
+  Viernes:   [316, 284, 304, 346, 329, 286, 301, 256, 147, 298, 282, 289, 0,   309, 271, 309, 281],
+  Sábado:    [347, 368, 378, 382, 393, 326, 355, 319, 338, 349, 343, 307, 340, 348, 350, 372, 342],
 };
 const maxLen = Math.max(...Object.values(weeklyData).map(a => a.length));
 const weekLabels = Array.from({length: maxLen}, (_, i) => `Semana ${i + 1}`);
@@ -396,13 +408,22 @@ const monthData = {
     Domingo:   { promedio: 0, total: 0, valores: [0,0,0,0] },
   },
   Mayo: {
-    Lunes:     { promedio: 198.7, total: 596,  valores: [194, 198, 204, 0  ] },
-    Martes:    { promedio: 225.5, total: 902,  valores: [233, 243, 236, 190] },
-    Miércoles: { promedio: 231.2, total: 925,  valores: [253, 241, 211, 220] },
-    Jueves:    { promedio: 252.0, total: 1008, valores: [291, 231, 268, 218] },
-    Viernes:   { promedio: 296.3, total: 889,  valores: [0, 309, 271, 309] },
-    Sábado:    { promedio: 352.5, total: 1410, valores: [340, 348, 350, 372] },
-    Domingo:   { promedio: 0, total: 0, valores: [0,0,0,0] },
+    Lunes:     { promedio: 198.7, total: 596,  valores: [194, 198, 204, 0,   0  ] },
+    Martes:    { promedio: 225.5, total: 902,  valores: [233, 243, 236, 190     ] },
+    Miércoles: { promedio: 231.2, total: 925,  valores: [253, 241, 211, 220     ] },
+    Jueves:    { promedio: 252.0, total: 1008, valores: [291, 231, 268, 218     ] },
+    Viernes:   { promedio: 292.5, total: 1170, valores: [0,   309, 271, 309, 281] },
+    Sábado:    { promedio: 350.4, total: 1752, valores: [340, 348, 350, 372, 342] },
+    Domingo:   { promedio: 0, total: 0, valores: [0,0,0,0,0] },
+  },
+  Junio: {
+    Lunes:     { promedio: 216.0, total: 216, valores: [216] },
+    Martes:    { promedio: 230.0, total: 230, valores: [230] },
+    Miércoles: { promedio: 251.0, total: 251, valores: [251] },
+    Jueves:    { promedio: 236.0, total: 236, valores: [236] },
+    Viernes:   { promedio: 0, total: 0, valores: [] },
+    Sábado:    { promedio: 0, total: 0, valores: [] },
+    Domingo:   { promedio: 0, total: 0, valores: [] },
   },
 };
 const diasActivos = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -452,9 +473,10 @@ buildMonthBar('barFeb','Febrero'); buildMonthTable('tblFeb','Febrero');
 buildMonthBar('barMar','Marzo');   buildMonthTable('tblMar','Marzo');
 buildMonthBar('barAbr','Abril');   buildMonthTable('tblAbr','Abril');
 buildMonthBar('barMay','Mayo');    buildMonthTable('tblMay','Mayo');
+buildMonthBar('barJun','Junio');   buildMonthTable('tblJun','Junio');
 
 // ── MULTI-MONTH LINE ───────────────────────────────────────
-const meses = ['Febrero','Marzo','Abril','Mayo'];
+const meses = ['Febrero','Marzo','Abril','Mayo','Junio'];
 new Chart(document.getElementById('multiMonthChart'), {
   type: 'line',
   data: { labels: meses, datasets: diasActivos.map(dia => ({
