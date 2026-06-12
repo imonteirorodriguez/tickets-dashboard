@@ -42,6 +42,22 @@
     @media (max-width: 640px) { .month-grid { grid-template-columns: 1fr; } }
     .bar-cell { display: flex; align-items: center; gap: 8px; }
     .mini-bar { height: 8px; border-radius: 4px; min-width: 4px; }
+    .insight { background: linear-gradient(135deg,#eef4ff 0%,#f5f0ff 100%); border-left: 4px solid #7aabdb; border-radius: 10px; padding: 18px 22px; }
+    .insight-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: #4f7bff; margin-bottom: 8px; }
+    .insight p { font-size: 0.9rem; color: #2c3e50; line-height: 1.65; }
+    .insight strong { color: #1a2940; }
+    .eff-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 14px; margin-bottom: 22px; }
+    @media (max-width:700px) { .eff-grid { grid-template-columns: repeat(2,1fr); } }
+    .eff-card { background:#fff; border-radius:14px; padding:18px 14px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.07); border-top:5px solid var(--color); position:relative; }
+    .eff-card.parcial { opacity:.78; }
+    .eff-name { font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:#8090a0; margin-bottom:10px; }
+    .eff-total { font-size:1.5rem; font-weight:800; color:var(--color); line-height:1; }
+    .eff-meta { font-size:.7rem; color:#a0b0c0; margin-top:5px; }
+    .eff-prom { font-size:1.15rem; font-weight:700; color:#1a2940; margin-top:10px; border-top:1px solid #f0f2f5; padding-top:10px; }
+    .eff-prom-lbl { font-size:.67rem; color:#8090a0; margin-top:3px; }
+    .parcial-badge { position:absolute; top:8px; right:10px; font-size:.58rem; background:#f0f2f5; color:#8090a0; padding:2px 6px; border-radius:8px; font-weight:600; }
+    .bar-bg { background:#f0f2f5; border-radius:4px; height:10px; }
+    .bar-fill { height:10px; border-radius:4px; }
   </style>
 </head>
 <body>
@@ -49,16 +65,16 @@
 
   <header>
     <h1>Tickets Diarios por Día de la Semana</h1>
-    <p>Período: 01 Feb 2026 — 04 Jun 2026 &nbsp;·&nbsp; Fuente: Tks promedio diarios.xlsx</p>
+    <p>Período: 01 Feb 2026 — 11 Jun 2026 &nbsp;·&nbsp; Fuente: Tks promedio diarios.xlsx</p>
   </header>
 
   <div class="kpi-grid">
-    <div class="kpi-card" style="--color:#7aabdb"><div class="kpi-label">Lunes</div><div class="kpi-value">207</div><div class="kpi-sub">promedio tks</div></div>
-    <div class="kpi-card" style="--color:#b89fdd"><div class="kpi-label">Martes</div><div class="kpi-value">230</div><div class="kpi-sub">promedio tks</div></div>
-    <div class="kpi-card" style="--color:#6dc5b8"><div class="kpi-label">Miércoles</div><div class="kpi-value">245</div><div class="kpi-sub">promedio tks</div></div>
+    <div class="kpi-card" style="--color:#7aabdb"><div class="kpi-label">Lunes</div><div class="kpi-value">204</div><div class="kpi-sub">promedio tks</div></div>
+    <div class="kpi-card" style="--color:#b89fdd"><div class="kpi-label">Martes</div><div class="kpi-value">232</div><div class="kpi-sub">promedio tks</div></div>
+    <div class="kpi-card" style="--color:#6dc5b8"><div class="kpi-label">Miércoles</div><div class="kpi-value">240</div><div class="kpi-sub">promedio tks</div></div>
     <div class="kpi-card" style="--color:#f0a96e"><div class="kpi-label">Jueves</div><div class="kpi-value">256</div><div class="kpi-sub">promedio tks</div></div>
-    <div class="kpi-card" style="--color:#ef8fa8"><div class="kpi-label">Viernes</div><div class="kpi-value">288</div><div class="kpi-sub">promedio tks</div></div>
-    <div class="kpi-card" style="--color:#f0cf6e"><div class="kpi-label">Sábado</div><div class="kpi-value">350</div><div class="kpi-sub">promedio tks</div></div>
+    <div class="kpi-card" style="--color:#ef8fa8"><div class="kpi-label">Viernes</div><div class="kpi-value">291</div><div class="kpi-sub">promedio tks</div></div>
+    <div class="kpi-card" style="--color:#f0cf6e"><div class="kpi-label">Sábado</div><div class="kpi-value">351</div><div class="kpi-sub">promedio tks</div></div>
     <div class="kpi-card" style="--color:#b8c4ce"><div class="kpi-label">Domingo</div><div class="kpi-value">—</div><div class="kpi-sub">sin actividad</div></div>
   </div>
 
@@ -80,12 +96,12 @@
     <table>
       <thead><tr><th>Día</th><th>Promedio</th><th>Mínimo</th><th>Máximo</th><th>Total Acum.</th><th>Días de actividad</th></tr></thead>
       <tbody>
-        <tr><td><span class="dot" style="background:#7aabdb"></span>Lunes</td><td><strong>207</strong></td><td>164</td><td>250</td><td>3.319</td><td>16 días</td></tr>
-        <tr><td><span class="dot" style="background:#b89fdd"></span>Martes</td><td><strong>230</strong></td><td>128</td><td>256</td><td>3.913</td><td>17 días</td></tr>
-        <tr><td><span class="dot" style="background:#6dc5b8"></span>Miércoles</td><td><strong>245</strong></td><td>211</td><td>321</td><td>4.406</td><td>18 días</td></tr>
-        <tr><td><span class="dot" style="background:#f0a96e"></span>Jueves</td><td><strong>256</strong></td><td>218</td><td>394</td><td>4.350</td><td>17 días</td></tr>
-        <tr><td><span class="dot" style="background:#ef8fa8"></span>Viernes</td><td><strong>288</strong></td><td>147</td><td>346</td><td>4.608</td><td>16 días</td></tr>
-        <tr><td><span class="dot" style="background:#f0cf6e"></span>Sábado</td><td><strong>350</strong></td><td>307</td><td>393</td><td>5.957</td><td>17 días</td></tr>
+        <tr><td><span class="dot" style="background:#7aabdb"></span>Lunes</td><td><strong>204</strong></td><td>151</td><td>250</td><td>3.470</td><td>17 días</td></tr>
+        <tr><td><span class="dot" style="background:#b89fdd"></span>Martes</td><td><strong>232</strong></td><td>128</td><td>270</td><td>4.183</td><td>18 días</td></tr>
+        <tr><td><span class="dot" style="background:#6dc5b8"></span>Miércoles</td><td><strong>240</strong></td><td>148</td><td>321</td><td>4.554</td><td>19 días</td></tr>
+        <tr><td><span class="dot" style="background:#f0a96e"></span>Jueves</td><td><strong>256</strong></td><td>218</td><td>394</td><td>4.609</td><td>18 días</td></tr>
+        <tr><td><span class="dot" style="background:#ef8fa8"></span>Viernes</td><td><strong>291</strong></td><td>147</td><td>346</td><td>4.940</td><td>17 días</td></tr>
+        <tr><td><span class="dot" style="background:#f0cf6e"></span>Sábado</td><td><strong>351</strong></td><td>307</td><td>393</td><td>6.320</td><td>18 días</td></tr>
         <tr><td><span class="dot" style="background:#b8c4ce"></span>Domingo</td><td>—</td><td>—</td><td>—</td><td>0</td><td>Sin actividad</td></tr>
       </tbody>
     </table>
@@ -127,14 +143,14 @@
   </div>
   <div id="panel-jun" class="month-panel">
     <div class="month-grid">
-      <div class="card" style="margin-bottom:0"><h2>Junio — Promedio por día</h2><p class="subtitle">Datos parciales al 04/06</p><div class="chart-wrap"><canvas id="barJun"></canvas></div></div>
+      <div class="card" style="margin-bottom:0"><h2>Junio — Promedio por día</h2><p class="subtitle">Datos parciales al 11/06</p><div class="chart-wrap"><canvas id="barJun"></canvas></div></div>
       <div class="card" style="margin-bottom:0"><h2>Junio — Detalle</h2><p class="subtitle">Promedio tickets (días activos)</p><table><thead><tr><th>Día</th><th>Prom.</th><th>Total</th><th>Distrib.</th></tr></thead><tbody id="tblJun"></tbody></table></div>
     </div>
   </div>
 
   <div class="card" style="margin-top:24px">
     <h2>Evolución Total de Tickets por Mes</h2>
-    <p class="subtitle">Suma total de tickets por mes calendario · Junio parcial al 04/06</p>
+    <p class="subtitle">Suma total de tickets por mes calendario · Junio parcial al 11/06</p>
     <div class="chart-wrap" style="height:300px"><canvas id="totalMonthLine"></canvas></div>
   </div>
 
@@ -143,7 +159,7 @@
     <div class="kpi-card" style="--color:#6dc5b8"><div class="kpi-label">Marzo</div><div class="kpi-value" style="font-size:1.6rem">6.569</div><div class="kpi-sub">tickets totales</div></div>
     <div class="kpi-card" style="--color:#f0a96e"><div class="kpi-label">Abril</div><div class="kpi-value" style="font-size:1.6rem">6.521</div><div class="kpi-sub">tickets totales</div></div>
     <div class="kpi-card" style="--color:#ef8fa8"><div class="kpi-label">Mayo</div><div class="kpi-value" style="font-size:1.6rem">6.353</div><div class="kpi-sub">tickets totales</div></div>
-    <div class="kpi-card" style="--color:#b89fdd"><div class="kpi-label">Junio <small style="font-size:.6rem">(parcial)</small></div><div class="kpi-value" style="font-size:1.6rem">933</div><div class="kpi-sub">tickets al 04/06</div></div>
+    <div class="kpi-card" style="--color:#b89fdd"><div class="kpi-label">Junio <small style="font-size:.6rem">(parcial)</small></div><div class="kpi-value" style="font-size:1.6rem">2.456</div><div class="kpi-sub">tickets al 11/06</div></div>
   </div>
 
   <div class="card" style="margin-top:24px">
@@ -156,6 +172,37 @@
     <h2>Evolución mes a mes por Día</h2>
     <p class="subtitle">Promedio de tickets por día de la semana — comparación entre meses</p>
     <div class="chart-wrap" style="height:380px"><canvas id="multiMonthChart"></canvas></div>
+  </div>
+
+  <!-- EFICIENCIA -->
+  <div class="section-title" style="margin-top:40px">Eficiencia por Día Trabajado <span>Tickets normalizados por días de actividad mensual</span></div>
+
+  <div class="insight" style="margin-bottom:22px">
+    <div class="insight-title">Lectura clave</div>
+    <p>El total de <strong>Mayo (6.353)</strong> fue menor que <strong>Abril (6.521)</strong>, pero Mayo tuvo <strong>1 día menos de actividad</strong> (24 vs. 25 días). Normalizado, el promedio diario de Mayo (<strong>264,7 tks/día</strong>) superó al de Abril (<strong>260,8 tks/día</strong>). El mejor rendimiento fue <strong>Febrero</strong> con <strong>268,6 tks/día</strong>.</p>
+  </div>
+
+  <div class="eff-grid">
+    <div class="eff-card" style="--color:#7aabdb"><div class="eff-name">Febrero</div><div class="eff-total">6.177</div><div class="eff-meta">tickets · 23 días</div><div class="eff-prom">268,6</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
+    <div class="eff-card" style="--color:#6dc5b8"><div class="eff-name">Marzo</div><div class="eff-total">6.569</div><div class="eff-meta">tickets · 25 días</div><div class="eff-prom">262,8</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
+    <div class="eff-card" style="--color:#f0a96e"><div class="eff-name">Abril</div><div class="eff-total">6.521</div><div class="eff-meta">tickets · 25 días</div><div class="eff-prom">260,8</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
+    <div class="eff-card" style="--color:#ef8fa8"><div class="eff-name">Mayo</div><div class="eff-total">6.353</div><div class="eff-meta">tickets · 24 días</div><div class="eff-prom">264,7</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
+    <div class="eff-card parcial" style="--color:#b89fdd"><span class="parcial-badge">parcial</span><div class="eff-name">Junio</div><div class="eff-total">2.456</div><div class="eff-meta">al 11/06 · 10 días</div><div class="eff-prom">245,6</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
+  </div>
+
+  <div class="card">
+    <h2>Tickets por día trabajado vs. Total mensual</h2>
+    <p class="subtitle">Barras: promedio por día trabajado &nbsp;·&nbsp; Línea: total mensual (meses completos)</p>
+    <div class="chart-wrap" style="height:300px"><canvas id="effComboChart"></canvas></div>
+  </div>
+
+  <div class="card" style="margin-top:0">
+    <h2>Detalle mensual normalizado</h2>
+    <p class="subtitle">Total de tickets, días activos y promedio por día trabajado</p>
+    <table>
+      <thead><tr><th>Mes</th><th>Total tickets</th><th>Días activos</th><th>Prom. / día</th><th>vs. mes anterior</th><th>Rendimiento</th></tr></thead>
+      <tbody id="effTbl"></tbody>
+    </table>
   </div>
 
   <!-- COBRANZA -->
@@ -341,7 +388,7 @@ const COLORS = {
 };
 
 const dias = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
-const promedios = [207.4, 230.2, 244.8, 255.9, 288.0, 350.4, 0];
+const promedios = [204.1, 232.4, 239.7, 256.1, 290.6, 351.1, 0];
 
 // ── BAR CHART ──────────────────────────────────────────────
 new Chart(document.getElementById('barChart'), {
@@ -364,12 +411,12 @@ new Chart(document.getElementById('barChart'), {
 
 // ── DATOS SEMANALES ────────────────────────────────────────
 const weeklyData = {
-  Lunes:     [213, 247, 0,   231, 197, 250, 195, 240, 164, 191, 189, 188, 202, 194, 198, 204, 0,   216],
-  Martes:    [239, 240, 128, 256, 250, 238, 221, 0,   254, 231, 238, 238, 248, 233, 243, 236, 190, 230],
-  Miércoles: [239, 229, 253, 240, 245, 244, 241, 225, 321, 275, 216, 239, 263, 253, 241, 211, 220, 251],
-  Jueves:    [231, 244, 237, 225, 281, 263, 250, 246, 0,   249, 259, 227, 394, 291, 231, 268, 218, 236],
-  Viernes:   [316, 284, 304, 346, 329, 286, 301, 256, 147, 298, 282, 289, 0,   309, 271, 309, 281],
-  Sábado:    [347, 368, 378, 382, 393, 326, 355, 319, 338, 349, 343, 307, 340, 348, 350, 372, 342],
+  Lunes:     [213, 247, 0,   231, 197, 250, 195, 240, 164, 191, 189, 188, 202, 194, 198, 204, 0,   216, 151],
+  Martes:    [239, 240, 128, 256, 250, 238, 221, 0,   254, 231, 238, 238, 248, 233, 243, 236, 190, 230, 270],
+  Miércoles: [239, 229, 253, 240, 245, 244, 241, 225, 321, 275, 216, 239, 263, 253, 241, 211, 220, 251, 148],
+  Jueves:    [231, 244, 237, 225, 281, 263, 250, 246, 0,   249, 259, 227, 394, 291, 231, 268, 218, 236, 259],
+  Viernes:   [316, 284, 304, 346, 329, 286, 301, 256, 147, 298, 282, 289, 0,   309, 271, 309, 281, 332],
+  Sábado:    [347, 368, 378, 382, 393, 326, 355, 319, 338, 349, 343, 307, 340, 348, 350, 372, 342, 363],
 };
 const maxLen = Math.max(...Object.values(weeklyData).map(a => a.length));
 const weekLabels = Array.from({length: maxLen}, (_, i) => `Semana ${i + 1}`);
@@ -417,13 +464,13 @@ const monthData = {
     Domingo:   { promedio: 0, total: 0, valores: [0,0,0,0,0] },
   },
   Junio: {
-    Lunes:     { promedio: 216.0, total: 216, valores: [216] },
-    Martes:    { promedio: 230.0, total: 230, valores: [230] },
-    Miércoles: { promedio: 251.0, total: 251, valores: [251] },
-    Jueves:    { promedio: 236.0, total: 236, valores: [236] },
-    Viernes:   { promedio: 0, total: 0, valores: [] },
-    Sábado:    { promedio: 0, total: 0, valores: [] },
-    Domingo:   { promedio: 0, total: 0, valores: [] },
+    Lunes:     { promedio: 183.5, total: 367, valores: [216, 151] },
+    Martes:    { promedio: 250.0, total: 500, valores: [230, 270] },
+    Miércoles: { promedio: 199.5, total: 399, valores: [251, 148] },
+    Jueves:    { promedio: 247.5, total: 495, valores: [236, 259] },
+    Viernes:   { promedio: 332.0, total: 332, valores: [332] },
+    Sábado:    { promedio: 363.0, total: 363, valores: [363] },
+    Domingo:   { promedio: 0, total: 0, valores: [0, 0] },
   },
 };
 const diasActivos = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -638,11 +685,12 @@ function buildCobTable(tbodyId, mes) {
   const grand = items.reduce((s, i) => s + i.total, 0);
   const tbody = document.getElementById(tbodyId);
   items.forEach(item => {
-    const pct = (item.total / grand * 100).toFixed(2);
+    const pct = (item.total / grand * 100);
+    const pctLabel = pct < 0.1 ? pct.toFixed(4) + '%' : pct.toFixed(2) + '%';
     const tr = document.createElement('tr');
     tr.innerHTML = `<td><span class="dot" style="background:${COB_COLORS[item.metodo]||'#ccc'}"></span>${item.metodo}</td>
       <td><strong>${fmtPesos(item.total)}</strong></td>
-      <td><strong style="color:${COB_COLORS[item.metodo]||'#ccc'}">${pct}%</strong></td>`;
+      <td><strong style="color:${COB_COLORS[item.metodo]||'#ccc'}">${pctLabel}</strong></td>`;
     tbody.appendChild(tr);
   });
   const tf = document.createElement('tr');
@@ -658,7 +706,7 @@ buildCobChart('cobMarChart','Marzo');   buildCobTable('cobMarTbl','Marzo');
 buildCobChart('cobAbrChart','Abril');   buildCobTable('cobAbrTbl','Abril');
 
 function showCob(key, evt) {
-  document.querySelectorAll('#cob-feb,#cob-mar,#cob-abr,#cob-may').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#cob-feb,#cob-mar,#cob-abr,#cob-may,#cob-jun').forEach(p => p.classList.remove('active'));
   document.getElementById('cobTabBar').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(key).classList.add('active');
   evt.target.classList.add('active');
@@ -694,6 +742,85 @@ new Chart(document.getElementById('cobStackedChart'), {
            title: { display: true, text: 'Pesos', color: '#8090a0', font: { size: 12 } } }
     }
   }
+});
+
+// ── EFICIENCIA POR DÍA TRABAJADO ───────────────────────────
+const COLORS_MES = { Febrero:'#7aabdb', Marzo:'#6dc5b8', Abril:'#f0a96e', Mayo:'#ef8fa8', Junio:'#b89fdd' };
+const effMeses   = ['Febrero','Marzo','Abril','Mayo','Junio'];
+const effTotales = [6177, 6569, 6521, 6353, 2456];
+const effDias    = [23, 25, 25, 24, 10];
+const effParcial = [false, false, false, false, true];
+const effProm    = effTotales.map((t, i) => +(t / effDias[i]).toFixed(1));
+
+new Chart(document.getElementById('effComboChart'), {
+  data: {
+    labels: effMeses,
+    datasets: [
+      {
+        type: 'bar', label: 'Promedio tks / día trabajado',
+        data: effProm,
+        backgroundColor: effMeses.map(m => COLORS_MES[m] + 'cc'),
+        borderColor: effMeses.map(m => COLORS_MES[m]),
+        borderWidth: 2, borderRadius: 8, yAxisID: 'yLeft', order: 2,
+      },
+      {
+        type: 'line', label: 'Total mensual (meses completos)',
+        data: effTotales.map((t, i) => effParcial[i] ? null : t),
+        borderColor: '#1a2940', backgroundColor: 'rgba(26,41,64,0.05)',
+        borderWidth: 2.5, pointRadius: 7, pointHoverRadius: 9,
+        pointBackgroundColor: effMeses.map((m, i) => effParcial[i] ? 'transparent' : COLORS_MES[m]),
+        pointBorderColor: '#fff', pointBorderWidth: 2,
+        tension: 0.35, yAxisID: 'yRight', order: 1, spanGaps: false,
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20, font: { size: 12 } } },
+      tooltip: { callbacks: { label: ctx => {
+        if (ctx.dataset.type === 'bar') return ` Prom/día: ${ctx.raw.toFixed(1)} tks`;
+        if (ctx.raw === null) return ` Total: (mes parcial)`;
+        return ` Total: ${ctx.raw.toLocaleString('es-AR')} tks`;
+      }}}
+    },
+    scales: {
+      yLeft: { type:'linear', position:'left', min:200, max:310,
+        grid:{ color:'#f0f2f5' }, ticks:{ color:'#8090a0', stepSize:20 },
+        title:{ display:true, text:'Tks promedio / día', color:'#8090a0', font:{ size:11 } } },
+      yRight: { type:'linear', position:'right', min:5500, max:7200,
+        grid:{ drawOnChartArea:false },
+        ticks:{ color:'#1a2940', callback: v => v.toLocaleString('es-AR') },
+        title:{ display:true, text:'Total mensual', color:'#1a2940', font:{ size:11 } } },
+      x: { grid:{ display:false }, ticks:{ color:'#5060a0', font:{ weight:'600', size:13 } } }
+    }
+  }
+});
+
+const effTbody = document.getElementById('effTbl');
+const effMaxProm = Math.max(...effProm.filter((_, i) => !effParcial[i]));
+effMeses.forEach((mes, i) => {
+  const prev = i > 0 && !effParcial[i-1] ? effProm[i-1] : null;
+  const diff = (prev !== null && !effParcial[i]) ? +(effProm[i] - prev).toFixed(1) : null;
+  const diffStr = diff === null ? '<span style="color:#c0c0c0">—</span>'
+    : diff > 0 ? `<span style="color:#27ae60">▲ +${diff}</span>`
+    : diff < 0 ? `<span style="color:#e74c3c">▼ ${diff}</span>`
+    : `<span style="color:#8090a0">sin cambio</span>`;
+  const barPct = !effParcial[i] ? Math.round(effProm[i] / effMaxProm * 100) : 0;
+  const parLabel = effParcial[i] ? ' <small style="font-size:.7rem;color:#b89fdd">(parcial)</small>' : '';
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td><span class="dot" style="background:${COLORS_MES[mes]}"></span><strong>${mes}</strong>${parLabel}</td>
+    <td><strong>${effTotales[i].toLocaleString('es-AR')}</strong></td>
+    <td>${effDias[i]} días</td>
+    <td><strong style="color:${COLORS_MES[mes]};font-size:1.05rem">${effProm[i].toFixed(1)}</strong></td>
+    <td>${diffStr}</td>
+    <td><div style="display:flex;align-items:center;gap:8px">
+      <div class="bar-bg" style="width:110px"><div class="bar-fill" style="width:${barPct}%;background:${COLORS_MES[mes]}"></div></div>
+      <span style="font-size:.75rem;color:#8090a0">${effParcial[i] ? '—' : barPct+'%'}</span>
+    </div></td>`;
+  effTbody.appendChild(tr);
 });
 </script>
 </body>
