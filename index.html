@@ -75,7 +75,7 @@
     <div class="kpi-card" style="--color:#f0a96e"><div class="kpi-label">Jueves</div><div class="kpi-value">254</div><div class="kpi-sub">promedio tks</div></div>
     <div class="kpi-card" style="--color:#ef8fa8"><div class="kpi-label">Viernes</div><div class="kpi-value">293</div><div class="kpi-sub">promedio tks</div></div>
     <div class="kpi-card" style="--color:#f0cf6e"><div class="kpi-label">Sábado</div><div class="kpi-value">350</div><div class="kpi-sub">promedio tks</div></div>
-    <div class="kpi-card" style="--color:#b8c4ce"><div class="kpi-label">Domingo</div><div class="kpi-value">1</div><div class="kpi-sub">1 día activo (14/06)</div></div>
+    <div class="kpi-card" style="--color:#b8c4ce"><div class="kpi-label">Domingo</div><div class="kpi-value">—</div><div class="kpi-sub">sin actividad</div></div>
   </div>
 
   <div class="card">
@@ -101,8 +101,8 @@
         <tr><td><span class="dot" style="background:#6dc5b8"></span>Miércoles</td><td><strong>232</strong></td><td>148</td><td>321</td><td>5.110</td><td>22 días</td></tr>
         <tr><td><span class="dot" style="background:#f0a96e"></span>Jueves</td><td><strong>254</strong></td><td>203</td><td>394</td><td>5.328</td><td>21 días</td></tr>
         <tr><td><span class="dot" style="background:#ef8fa8"></span>Viernes</td><td><strong>293</strong></td><td>147</td><td>346</td><td>5.866</td><td>20 días</td></tr>
-        <tr><td><span class="dot" style="background:#f0cf6e"></span>Sábado</td><td><strong>350</strong></td><td>307</td><td>393</td><td>7.351</td><td>21 días</td></tr>
-        <tr><td><span class="dot" style="background:#b8c4ce"></span>Domingo</td><td><strong>1</strong></td><td>1</td><td>1</td><td>1</td><td>1 día (14/06)</td></tr>
+        <tr><td><span class="dot" style="background:#f0cf6e"></span>Sábado</td><td><strong>350</strong></td><td>307</td><td>393</td><td>7.352</td><td>21 días</td></tr>
+        <tr><td><span class="dot" style="background:#b8c4ce"></span>Domingo</td><td>—</td><td>—</td><td>—</td><td>0</td><td>Sin actividad</td></tr>
       </tbody>
     </table>
   </div>
@@ -187,7 +187,7 @@
 
   <div class="insight" style="margin-bottom:22px">
     <div class="insight-title">Lectura clave</div>
-    <p><strong>Junio</strong> cerró completo con <strong>6.281 tickets</strong> en 26 días activos (<strong>241,6 tks/día</strong>), el rendimiento más bajo entre los meses completos — incluye el Dom 14/06 con 1 ticket, que cuenta como día activo. <strong>Mayo (264,7 tks/día)</strong> volvió a superar a <strong>Abril (260,8)</strong> pese a un total menor, por tener 1 día menos de actividad. El mejor sigue siendo <strong>Febrero</strong> con <strong>268,6 tks/día</strong>.</p>
+    <p><strong>Junio</strong> cerró completo con <strong>6.281 tickets</strong> en 25 días activos (<strong>251,2 tks/día</strong>), el rendimiento más bajo entre los meses completos. <strong>Mayo (264,7 tks/día)</strong> volvió a superar a <strong>Abril (260,8)</strong> pese a un total menor, por tener 1 día menos de actividad. El mejor sigue siendo <strong>Febrero</strong> con <strong>268,6 tks/día</strong>.</p>
   </div>
 
   <div class="eff-grid">
@@ -195,7 +195,7 @@
     <div class="eff-card" style="--color:#6dc5b8"><div class="eff-name">Marzo</div><div class="eff-total">6.569</div><div class="eff-meta">tickets · 25 días</div><div class="eff-prom">262,8</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
     <div class="eff-card" style="--color:#f0a96e"><div class="eff-name">Abril</div><div class="eff-total">6.521</div><div class="eff-meta">tickets · 25 días</div><div class="eff-prom">260,8</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
     <div class="eff-card" style="--color:#ef8fa8"><div class="eff-name">Mayo</div><div class="eff-total">6.353</div><div class="eff-meta">tickets · 24 días</div><div class="eff-prom">264,7</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
-    <div class="eff-card" style="--color:#b89fdd"><div class="eff-name">Junio</div><div class="eff-total">6.281</div><div class="eff-meta">tickets · 26 días</div><div class="eff-prom">241,6</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
+    <div class="eff-card" style="--color:#b89fdd"><div class="eff-name">Junio</div><div class="eff-total">6.281</div><div class="eff-meta">tickets · 25 días</div><div class="eff-prom">251,2</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
     <div class="eff-card parcial" style="--color:#f0cf6e"><span class="parcial-badge">parcial</span><div class="eff-name">Julio</div><div class="eff-total">463</div><div class="eff-meta">al 02/07 · 2 días</div><div class="eff-prom">231,5</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
   </div>
 
@@ -397,7 +397,7 @@ const COLORS = {
 };
 
 const dias = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
-const promedios = [200.8, 233.0, 232.3, 253.7, 293.3, 350.0, 1];
+const promedios = [200.8, 233.0, 232.3, 253.7, 293.3, 350.1, 0];
 
 // ── BAR CHART ──────────────────────────────────────────────
 new Chart(document.getElementById('barChart'), {
@@ -425,7 +425,7 @@ const weeklyData = {
   Miércoles: [239, 229, 253, 240, 245, 244, 241, 225, 321, 275, 216, 239, 263, 253, 241, 211, 220, 251, 148, 177, 175, 204],
   Jueves:    [231, 244, 237, 225, 281, 263, 250, 246, 0,   249, 259, 227, 394, 291, 231, 268, 218, 236, 259, 257, 203, 259],
   Viernes:   [316, 284, 304, 346, 329, 286, 301, 256, 147, 298, 282, 289, 0,   309, 271, 309, 281, 332, 296, 340, 290],
-  Sábado:    [347, 368, 378, 382, 393, 326, 355, 319, 338, 349, 343, 307, 340, 348, 350, 372, 342, 363, 328, 390, 313],
+  Sábado:    [347, 368, 378, 382, 393, 326, 355, 319, 338, 349, 343, 307, 340, 348, 350, 372, 342, 363, 329, 390, 313],
 };
 const maxLen = Math.max(...Object.values(weeklyData).map(a => a.length));
 const weekLabels = Array.from({length: maxLen}, (_, i) => `Semana ${i + 1}`);
@@ -478,8 +478,8 @@ const monthData = {
     Miércoles: { promedio: 187.8, total: 751,  valores: [251, 148, 177, 175] },
     Jueves:    { promedio: 238.8, total: 955,  valores: [236, 259, 257, 203] },
     Viernes:   { promedio: 314.5, total: 1258, valores: [332, 296, 340, 290] },
-    Sábado:    { promedio: 348.5, total: 1394, valores: [363, 328, 390, 313] },
-    Domingo:   { promedio: 1.0, total: 1, valores: [0, 1, 0, 0] },
+    Sábado:    { promedio: 348.8, total: 1395, valores: [363, 329, 390, 313] },
+    Domingo:   { promedio: 0, total: 0, valores: [0, 0, 0, 0] },
   },
   Julio: {
     Lunes:     { promedio: 0, total: 0, valores: [] },
@@ -767,7 +767,7 @@ new Chart(document.getElementById('cobStackedChart'), {
 const COLORS_MES = { Febrero:'#7aabdb', Marzo:'#6dc5b8', Abril:'#f0a96e', Mayo:'#ef8fa8', Junio:'#b89fdd', Julio:'#f0cf6e' };
 const effMeses   = ['Febrero','Marzo','Abril','Mayo','Junio','Julio'];
 const effTotales = [6177, 6569, 6521, 6353, 6281, 463];
-const effDias    = [23, 25, 25, 24, 26, 2];
+const effDias    = [23, 25, 25, 24, 25, 2];
 const effParcial = [false, false, false, false, false, true];
 const effProm    = effTotales.map((t, i) => +(t / effDias[i]).toFixed(1));
 
