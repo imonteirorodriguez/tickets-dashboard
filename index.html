@@ -244,15 +244,21 @@
     </div>
   </div>
   <div id="cob-may" class="month-panel">
-    <div class="card"><h2>Mayo</h2><p class="subtitle">Datos aún no disponibles</p></div>
+    <div class="month-grid">
+      <div class="card" style="margin-bottom:0"><h2>Mayo — Distribución por forma de pago</h2><p class="subtitle">Total: $823.847.832</p><div class="chart-wrap"><canvas id="cobMayChart"></canvas></div></div>
+      <div class="card" style="margin-bottom:0"><h2>Mayo — Detalle</h2><p class="subtitle">Montos y participación sobre el total · T. Crédito incluye plan 3 cuotas c/recargo</p><table><thead><tr><th>Forma de pago</th><th>Total ($)</th><th>%</th></tr></thead><tbody id="cobMayTbl"></tbody></table></div>
+    </div>
   </div>
   <div id="cob-jun" class="month-panel">
-    <div class="card"><h2>Junio</h2><p class="subtitle">Datos aún no disponibles</p></div>
+    <div class="month-grid">
+      <div class="card" style="margin-bottom:0"><h2>Junio — Distribución por forma de pago</h2><p class="subtitle">Total: $805.026.945 · sin cobranza por Cta. Corriente</p><div class="chart-wrap"><canvas id="cobJunChart"></canvas></div></div>
+      <div class="card" style="margin-bottom:0"><h2>Junio — Detalle</h2><p class="subtitle">Montos y participación sobre el total · T. Crédito incluye plan 3 cuotas c/recargo</p><table><thead><tr><th>Forma de pago</th><th>Total ($)</th><th>%</th></tr></thead><tbody id="cobJunTbl"></tbody></table></div>
+    </div>
   </div>
 
   <div class="card" style="margin-top:24px">
     <h2>Evolución de Cobranza por Forma de Pago</h2>
-    <p class="subtitle">Composición mensual en pesos · comparación Feb–Abr</p>
+    <p class="subtitle">Composición mensual en pesos · comparación Feb–Jun</p>
     <div class="chart-wrap" style="height:360px"><canvas id="cobStackedChart"></canvas></div>
   </div>
 
@@ -648,7 +654,8 @@ new Chart(document.getElementById('lineChart'), {
 // ── COBRANZA ───────────────────────────────────────────────
 const COB_COLORS = {
   'Cta. Corriente': '#7aabdb', 'Efectivo': '#6dc5b8', 'T. Crédito': '#ef8fa8',
-  'T. Débito': '#f0a96e', 'Transferencias': '#f0cf6e', 'ECHEQ': '#b8c4ce'
+  'T. Débito': '#f0a96e', 'Transferencias': '#f0cf6e', 'ECHEQ': '#b8c4ce',
+  'Pagos a Terceros': '#b89fdd'
 };
 const cobData = {
   Febrero: [
@@ -672,6 +679,23 @@ const cobData = {
     { metodo: 'T. Crédito',     total: 61755652.05  },
     { metodo: 'T. Débito',      total: 246942769.09 },
     { metodo: 'Transferencias', total: 10908431.20  },
+  ],
+  Mayo: [
+    { metodo: 'Cta. Corriente',   total: 168318707.74 },
+    { metodo: 'Efectivo',         total: 217293546.95 },
+    { metodo: 'T. Crédito',       total: 62695040.52  },
+    { metodo: 'T. Débito',        total: 253662288.65 },
+    { metodo: 'Transferencias',   total: 49567336.21  },
+    { metodo: 'ECHEQ',            total: 16940.00     },
+    { metodo: 'Pagos a Terceros', total: 72293971.70  },
+  ],
+  Junio: [
+    { metodo: 'Efectivo',         total: 192103488.62 },
+    { metodo: 'T. Crédito',       total: 52575321.87  },
+    { metodo: 'T. Débito',        total: 256070034.16 },
+    { metodo: 'Transferencias',   total: 168110691.40 },
+    { metodo: 'ECHEQ',            total: 527536.60    },
+    { metodo: 'Pagos a Terceros', total: 135639872.30 },
   ],
 };
 
@@ -723,6 +747,8 @@ function buildCobTable(tbodyId, mes) {
 buildCobChart('cobFebChart','Febrero'); buildCobTable('cobFebTbl','Febrero');
 buildCobChart('cobMarChart','Marzo');   buildCobTable('cobMarTbl','Marzo');
 buildCobChart('cobAbrChart','Abril');   buildCobTable('cobAbrTbl','Abril');
+buildCobChart('cobMayChart','Mayo');    buildCobTable('cobMayTbl','Mayo');
+buildCobChart('cobJunChart','Junio');   buildCobTable('cobJunTbl','Junio');
 
 function showCob(key, evt) {
   document.querySelectorAll('#cob-feb,#cob-mar,#cob-abr,#cob-may,#cob-jun').forEach(p => p.classList.remove('active'));
@@ -732,7 +758,7 @@ function showCob(key, evt) {
 }
 
 // ── STACKED BAR COBRANZA ───────────────────────────────────
-const cobMeses = ['Febrero','Marzo','Abril'];
+const cobMeses = ['Febrero','Marzo','Abril','Mayo','Junio'];
 const allMetodos = [...new Set(Object.values(cobData).flatMap(m => m.map(i => i.metodo)))];
 new Chart(document.getElementById('cobStackedChart'), {
   type: 'bar',
