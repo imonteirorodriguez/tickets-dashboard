@@ -232,6 +232,7 @@
     <button class="tab-btn" onclick="showCob('cob-abr', event)">Abril</button>
     <button class="tab-btn" onclick="showCob('cob-may', event)">Mayo</button>
     <button class="tab-btn" onclick="showCob('cob-jun', event)">Junio</button>
+    <button class="tab-btn" onclick="showCob('cob-jul', event)">Julio</button>
   </div>
 
   <div id="cob-feb" class="month-panel active">
@@ -264,10 +265,16 @@
       <div class="card" style="margin-bottom:0"><h2>Junio — Detalle</h2><p class="subtitle">Montos y participación sobre el total · T. Crédito incluye plan 3 cuotas c/recargo</p><table><thead><tr><th>Forma de pago</th><th>Total ($)</th><th>%</th></tr></thead><tbody id="cobJunTbl"></tbody></table></div>
     </div>
   </div>
+  <div id="cob-jul" class="month-panel">
+    <div class="month-grid">
+      <div class="card" style="margin-bottom:0"><h2>Julio — Distribución por forma de pago</h2><p class="subtitle">Total: $775.726.146 · sin cobranza por Cta. Corriente</p><div class="chart-wrap"><canvas id="cobJulChart"></canvas></div></div>
+      <div class="card" style="margin-bottom:0"><h2>Julio — Detalle</h2><p class="subtitle">Montos y participación sobre el total · T. Crédito incluye plan 3 cuotas c/recargo</p><table><thead><tr><th>Forma de pago</th><th>Total ($)</th><th>%</th></tr></thead><tbody id="cobJulTbl"></tbody></table></div>
+    </div>
+  </div>
 
   <div class="card" style="margin-top:24px">
     <h2>Evolución de Cobranza por Forma de Pago</h2>
-    <p class="subtitle">Composición mensual en pesos · comparación Feb–Jun</p>
+    <p class="subtitle">Composición mensual en pesos · comparación Feb–Jul</p>
     <div class="chart-wrap" style="height:360px"><canvas id="cobStackedChart"></canvas></div>
   </div>
 
@@ -716,6 +723,14 @@ const cobData = {
     { metodo: 'ECHEQ',            total: 527536.60    },
     { metodo: 'Pagos a Terceros', total: 135639872.30 },
   ],
+  Julio: [
+    { metodo: 'Efectivo',         total: 177111479.49 },
+    { metodo: 'T. Crédito',       total: 57572038.94  },
+    { metodo: 'T. Débito',        total: 280079503.01 },
+    { metodo: 'Transferencias',   total: 157531504.48 },
+    { metodo: 'ECHEQ',            total: 1961356.88   },
+    { metodo: 'Pagos a Terceros', total: 101470263.10 },
+  ],
 };
 
 function fmtPesos(v) { return '$' + Math.round(v).toLocaleString('es-AR'); }
@@ -768,16 +783,17 @@ buildCobChart('cobMarChart','Marzo');   buildCobTable('cobMarTbl','Marzo');
 buildCobChart('cobAbrChart','Abril');   buildCobTable('cobAbrTbl','Abril');
 buildCobChart('cobMayChart','Mayo');    buildCobTable('cobMayTbl','Mayo');
 buildCobChart('cobJunChart','Junio');   buildCobTable('cobJunTbl','Junio');
+buildCobChart('cobJulChart','Julio');   buildCobTable('cobJulTbl','Julio');
 
 function showCob(key, evt) {
-  document.querySelectorAll('#cob-feb,#cob-mar,#cob-abr,#cob-may,#cob-jun').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#cob-feb,#cob-mar,#cob-abr,#cob-may,#cob-jun,#cob-jul').forEach(p => p.classList.remove('active'));
   document.getElementById('cobTabBar').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(key).classList.add('active');
   evt.target.classList.add('active');
 }
 
 // ── STACKED BAR COBRANZA ───────────────────────────────────
-const cobMeses = ['Febrero','Marzo','Abril','Mayo','Junio'];
+const cobMeses = ['Febrero','Marzo','Abril','Mayo','Junio','Julio'];
 const allMetodos = [...new Set(Object.values(cobData).flatMap(m => m.map(i => i.metodo)))];
 new Chart(document.getElementById('cobStackedChart'), {
   type: 'bar',
