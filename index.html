@@ -65,13 +65,13 @@
 
   <header>
     <h1>Tickets Diarios por Día de la Semana</h1>
-    <p>Período: 01 Feb 2026 — 09 Oct 2026 &nbsp;·&nbsp; Fuente: Tks promedio diarios.xlsx</p>
+    <p>Período: 01 Feb 2026 — 15 Oct 2026 &nbsp;·&nbsp; Fuente: Tks promedio diarios.xlsx</p>
   </header>
 
   <div class="kpi-grid">
     <div class="kpi-card" style="--color:#7aabdb"><div class="kpi-label">Lunes</div><div class="kpi-value">201</div><div class="kpi-sub">promedio tks</div></div>
     <div class="kpi-card" style="--color:#b89fdd"><div class="kpi-label">Martes</div><div class="kpi-value">230</div><div class="kpi-sub">promedio tks</div></div>
-    <div class="kpi-card" style="--color:#6dc5b8"><div class="kpi-label">Miércoles</div><div class="kpi-value">231</div><div class="kpi-sub">promedio tks</div></div>
+    <div class="kpi-card" style="--color:#6dc5b8"><div class="kpi-label">Miércoles</div><div class="kpi-value">230</div><div class="kpi-sub">promedio tks</div></div>
     <div class="kpi-card" style="--color:#f0a96e"><div class="kpi-label">Jueves</div><div class="kpi-value">238</div><div class="kpi-sub">promedio tks</div></div>
     <div class="kpi-card" style="--color:#ef8fa8"><div class="kpi-label">Viernes</div><div class="kpi-value">290</div><div class="kpi-sub">promedio tks</div></div>
     <div class="kpi-card" style="--color:#f0cf6e"><div class="kpi-label">Sábado</div><div class="kpi-value">344</div><div class="kpi-sub">promedio tks</div></div>
@@ -97,11 +97,11 @@
       <thead><tr><th>Día</th><th>Promedio</th><th>Mínimo</th><th>Máximo</th><th>Total Acum.</th><th>Días de actividad</th></tr></thead>
       <tbody>
         <tr><td><span class="dot" style="background:#7aabdb"></span>Lunes</td><td><strong>201</strong></td><td>151</td><td>250</td><td>6.425</td><td>32 días</td></tr>
-        <tr><td><span class="dot" style="background:#b89fdd"></span>Martes</td><td><strong>230</strong></td><td>128</td><td>270</td><td>8.038</td><td>35 días</td></tr>
-        <tr><td><span class="dot" style="background:#6dc5b8"></span>Miércoles</td><td><strong>231</strong></td><td>148</td><td>340</td><td>8.299</td><td>36 días</td></tr>
-        <tr><td><span class="dot" style="background:#f0a96e"></span>Jueves</td><td><strong>238</strong></td><td>166</td><td>394</td><td>8.347</td><td>35 días</td></tr>
+        <tr><td><span class="dot" style="background:#b89fdd"></span>Martes</td><td><strong>230</strong></td><td>128</td><td>270</td><td>8.280</td><td>36 días</td></tr>
+        <tr><td><span class="dot" style="background:#6dc5b8"></span>Miércoles</td><td><strong>230</strong></td><td>148</td><td>340</td><td>8.518</td><td>37 días</td></tr>
+        <tr><td><span class="dot" style="background:#f0a96e"></span>Jueves</td><td><strong>238</strong></td><td>166</td><td>394</td><td>8.577</td><td>36 días</td></tr>
         <tr><td><span class="dot" style="background:#ef8fa8"></span>Viernes</td><td><strong>290</strong></td><td>147</td><td>346</td><td>10.133</td><td>35 días</td></tr>
-        <tr><td><span class="dot" style="background:#f0cf6e"></span>Sábado</td><td><strong>344</strong></td><td>275</td><td>393</td><td>12.029</td><td>35 días</td></tr>
+        <tr><td><span class="dot" style="background:#f0cf6e"></span>Sábado</td><td><strong>344</strong></td><td>275</td><td>393</td><td>12.384</td><td>36 días</td></tr>
         <tr><td><span class="dot" style="background:#b8c4ce"></span>Domingo</td><td>—</td><td>—</td><td>—</td><td>0</td><td>Sin actividad (tks de Dom 14/06 y 30/08 sumados al sábado previo)</td></tr>
       </tbody>
     </table>
@@ -171,7 +171,7 @@
   </div>
   <div id="panel-oct" class="month-panel">
     <div class="month-grid">
-      <div class="card" style="margin-bottom:0"><h2>Octubre — Promedio por día</h2><p class="subtitle">Datos parciales al 09/10</p><div class="chart-wrap"><canvas id="barOct"></canvas></div></div>
+      <div class="card" style="margin-bottom:0"><h2>Octubre — Promedio por día</h2><p class="subtitle">Datos parciales al 15/10</p><div class="chart-wrap"><canvas id="barOct"></canvas></div></div>
       <div class="card" style="margin-bottom:0"><h2>Octubre — Detalle</h2><p class="subtitle">Promedio tickets (días activos)</p><table><thead><tr><th>Día</th><th>Prom.</th><th>Total</th><th>Distrib.</th></tr></thead><tbody id="tblOct"></tbody></table></div>
     </div>
   </div>
@@ -191,7 +191,7 @@
     <div class="kpi-card" style="--color:#f0cf6e"><div class="kpi-label">Julio</div><div class="kpi-value" style="font-size:1.6rem">6.468</div><div class="kpi-sub">tickets totales</div></div>
     <div class="kpi-card" style="--color:#88c9a0"><div class="kpi-label">Agosto</div><div class="kpi-value" style="font-size:1.6rem">6.321</div><div class="kpi-sub">tickets totales</div></div>
     <div class="kpi-card" style="--color:#e0b884"><div class="kpi-label">Septiembre</div><div class="kpi-value" style="font-size:1.6rem">6.415</div><div class="kpi-sub">tickets totales</div></div>
-    <div class="kpi-card" style="--color:#a4b8e0"><div class="kpi-label">Octubre <small style="font-size:.6rem">(parcial)</small></div><div class="kpi-value" style="font-size:1.6rem">2.166</div><div class="kpi-sub">tickets al 09/10</div></div>
+    <div class="kpi-card" style="--color:#a4b8e0"><div class="kpi-label">Octubre <small style="font-size:.6rem">(parcial)</small></div><div class="kpi-value" style="font-size:1.6rem">3.212</div><div class="kpi-sub">tickets al 15/10</div></div>
   </div>
 
   <div class="card" style="margin-top:24px">
@@ -211,7 +211,7 @@
 
   <div class="insight" style="margin-bottom:22px">
     <div class="insight-title">Lectura clave</div>
-    <p><strong>Agosto</strong> cerró con <strong>6.321 tickets</strong> en 25 días (252,8 tks/día): frena la caída y mejora frente a Julio (239,6) y Junio (251,2), pero sigue debajo del nivel Feb–May (260–269). El ticket del Dom 30/08 se computa en el Sáb 29/08. <strong>Septiembre</strong> cerró con <strong>6.415 tickets</strong> en 26 días (<strong>246,7 tks/día</strong>), confirmando la meseta (banda de 240–253 tks/día) que se repite desde Junio (Jun 251,2 · Jul 239,6 · Ago 252,8 · Sep 246,7). <strong>Octubre</strong> (parcial al 09/10) promedia <strong>270,8 tks/día</strong> en 8 días, por encima de la meseta Jun–Sep (240–253). El Vie 09/10 (333 tks) es el tercer mejor viernes del período, pero con solo una semana completa la lectura es preliminar.</p>
+    <p><strong>Agosto</strong> cerró con <strong>6.321 tickets</strong> en 25 días (252,8 tks/día): frena la caída y mejora frente a Julio (239,6) y Junio (251,2), pero sigue debajo del nivel Feb–May (260–269). El ticket del Dom 30/08 se computa en el Sáb 29/08. <strong>Septiembre</strong> cerró con <strong>6.415 tickets</strong> en 26 días (<strong>246,7 tks/día</strong>), confirmando la meseta (banda de 240–253 tks/día) que se repite desde Junio (Jun 251,2 · Jul 239,6 · Ago 252,8 · Sep 246,7). <strong>Octubre</strong> (parcial al 15/10) promedia <strong>267,7 tks/día</strong> en 12 días, por encima de la meseta Jun–Sep (240–253). El Lun 12/10 figura en 0 (feriado) y se excluye del promedio; la semana en curso (Mar–Jue: 242, 219, 230) viene más baja que la anterior.</p>
   </div>
 
   <div class="eff-grid">
@@ -223,7 +223,7 @@
     <div class="eff-card" style="--color:#f0cf6e"><div class="eff-name">Julio</div><div class="eff-total">6.468</div><div class="eff-meta">tickets · 27 días</div><div class="eff-prom">239,6</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
     <div class="eff-card" style="--color:#88c9a0"><div class="eff-name">Agosto</div><div class="eff-total">6.321</div><div class="eff-meta">tickets · 25 días</div><div class="eff-prom">252,8</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
     <div class="eff-card" style="--color:#e0b884"><div class="eff-name">Septiembre</div><div class="eff-total">6.415</div><div class="eff-meta">tickets · 26 días</div><div class="eff-prom">246,7</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
-    <div class="eff-card parcial" style="--color:#a4b8e0"><span class="parcial-badge">parcial</span><div class="eff-name">Octubre</div><div class="eff-total">2.166</div><div class="eff-meta">al 09/10 · 8 días</div><div class="eff-prom">270,8</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
+    <div class="eff-card parcial" style="--color:#a4b8e0"><span class="parcial-badge">parcial</span><div class="eff-name">Octubre</div><div class="eff-total">3.212</div><div class="eff-meta">al 15/10 · 12 días</div><div class="eff-prom">267,7</div><div class="eff-prom-lbl">tks / día trabajado</div></div>
   </div>
 
   <div class="card">
@@ -310,7 +310,7 @@
     <div class="chart-wrap" style="height:360px"><canvas id="cobStackedChart"></canvas></div>
   </div>
 
-  <footer>Generado con Claude · Datos: Tks promedio diarios.xlsx · Actualizado al 09/10/2026</footer>
+  <footer>Generado con Claude · Datos: Tks promedio diarios.xlsx · Actualizado al 15/10/2026</footer>
 </div>
 
 <script>
@@ -451,7 +451,7 @@ const COLORS = {
 };
 
 const dias = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
-const promedios = [200.8, 229.7, 230.5, 238.5, 289.5, 343.7, 0];
+const promedios = [200.8, 230.0, 230.2, 238.2, 289.5, 344.0, 0];
 
 // ── BAR CHART ──────────────────────────────────────────────
 new Chart(document.getElementById('barChart'), {
@@ -474,12 +474,12 @@ new Chart(document.getElementById('barChart'), {
 
 // ── DATOS SEMANALES ────────────────────────────────────────
 const weeklyData = {
-  Lunes:     [213, 247, 0, 231, 197, 250, 195, 240, 164, 191, 189, 188, 202, 194, 198, 204, 0, 216, 151, 0, 169, 177, 245, 184, 165, 181, 231, 212, 0, 207, 210, 208, 193, 181, 194, 198],
-  Martes:    [239, 240, 128, 256, 250, 238, 221, 0, 254, 231, 238, 238, 248, 233, 243, 236, 190, 230, 270, 259, 214, 236, 229, 218, 186, 221, 250, 219, 194, 238, 234, 256, 203, 215, 215, 268],
-  Miércoles: [239, 229, 253, 240, 245, 244, 241, 225, 321, 275, 216, 239, 263, 253, 241, 211, 220, 251, 148, 177, 175, 204, 340, 210, 198, 221, 216, 234, 222, 223, 222, 207, 233, 235, 210, 218],
-  Jueves:    [231, 244, 237, 225, 281, 263, 250, 246, 0, 249, 259, 227, 394, 291, 231, 268, 218, 236, 259, 257, 203, 259, 166, 193, 205, 191, 192, 230, 202, 210, 237, 225, 230, 221, 252, 265],
+  Lunes:     [213, 247, 0, 231, 197, 250, 195, 240, 164, 191, 189, 188, 202, 194, 198, 204, 0, 216, 151, 0, 169, 177, 245, 184, 165, 181, 231, 212, 0, 207, 210, 208, 193, 181, 194, 198, 0],
+  Martes:    [239, 240, 128, 256, 250, 238, 221, 0, 254, 231, 238, 238, 248, 233, 243, 236, 190, 230, 270, 259, 214, 236, 229, 218, 186, 221, 250, 219, 194, 238, 234, 256, 203, 215, 215, 268, 242],
+  Miércoles: [239, 229, 253, 240, 245, 244, 241, 225, 321, 275, 216, 239, 263, 253, 241, 211, 220, 251, 148, 177, 175, 204, 340, 210, 198, 221, 216, 234, 222, 223, 222, 207, 233, 235, 210, 218, 219],
+  Jueves:    [231, 244, 237, 225, 281, 263, 250, 246, 0, 249, 259, 227, 394, 291, 231, 268, 218, 236, 259, 257, 203, 259, 166, 193, 205, 191, 192, 230, 202, 210, 237, 225, 230, 221, 252, 265, 230],
   Viernes:   [316, 284, 304, 346, 329, 286, 301, 256, 147, 298, 282, 289, 0, 309, 271, 309, 281, 332, 296, 340, 290, 295, 304, 261, 255, 262, 298, 276, 281, 254, 312, 309, 273, 264, 290, 333],
-  Sábado:    [347, 368, 378, 382, 393, 326, 355, 319, 338, 349, 343, 307, 340, 348, 350, 372, 342, 363, 329, 390, 313, 292, 350, 358, 275, 339, 356, 358, 351, 318, 383, 322, 331, 302, 342],
+  Sábado:    [347, 368, 378, 382, 393, 326, 355, 319, 338, 349, 343, 307, 340, 348, 350, 372, 342, 363, 329, 390, 313, 292, 350, 358, 275, 339, 356, 358, 351, 318, 383, 322, 331, 302, 342, 355],
 };
 const maxLen = Math.max(...Object.values(weeklyData).map(a => a.length));
 const weekLabels = Array.from({length: maxLen}, (_, i) => `Semana ${i + 1}`);
@@ -563,13 +563,13 @@ const monthData = {
     Domingo:   { promedio: 0.0, total: 0, valores: [0, 0, 0, 0] },
   },
   Octubre: {
-    Lunes:     { promedio: 198.0, total: 198, valores: [198] },
-    Martes:    { promedio: 268.0, total: 268, valores: [268] },
-    Miércoles: { promedio: 218.0, total: 218, valores: [218] },
-    Jueves:    { promedio: 258.5, total: 517, valores: [252, 265] },
+    Lunes:     { promedio: 198.0, total: 198, valores: [198, 0] },
+    Martes:    { promedio: 255.0, total: 510, valores: [268, 242] },
+    Miércoles: { promedio: 218.5, total: 437, valores: [218, 219] },
+    Jueves:    { promedio: 249.0, total: 747, valores: [252, 265, 230] },
     Viernes:   { promedio: 311.5, total: 623, valores: [290, 333] },
-    Sábado:    { promedio: 342.0, total: 342, valores: [342] },
-    Domingo:   { promedio: 0.0, total: 0, valores: [0] },
+    Sábado:    { promedio: 348.5, total: 697, valores: [342, 355] },
+    Domingo:   { promedio: 0.0, total: 0, valores: [0, 0] },
   },
 };
 const diasActivos = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -897,8 +897,8 @@ new Chart(document.getElementById('cobStackedChart'), {
 // ── EFICIENCIA POR DÍA TRABAJADO ───────────────────────────
 const COLORS_MES = { Febrero:'#7aabdb', Marzo:'#6dc5b8', Abril:'#f0a96e', Mayo:'#ef8fa8', Junio:'#b89fdd', Julio:'#f0cf6e', Agosto:'#88c9a0', Septiembre:'#e0b884', Octubre:'#a4b8e0' };
 const effMeses   = ['Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre'];
-const effTotales = [6177, 6569, 6521, 6353, 6281, 6468, 6321, 6415, 2166];
-const effDias    = [23, 25, 25, 24, 25, 27, 25, 26, 8];
+const effTotales = [6177, 6569, 6521, 6353, 6281, 6468, 6321, 6415, 3212];
+const effDias    = [23, 25, 25, 24, 25, 27, 25, 26, 12];
 const effParcial = [false, false, false, false, false, false, false, false, true];
 const effProm    = effTotales.map((t, i) => +(t / effDias[i]).toFixed(1));
 
