@@ -310,6 +310,33 @@
     <div class="chart-wrap" style="height:360px"><canvas id="cobStackedChart"></canvas></div>
   </div>
 
+  <!-- CUENTAS POR COBRAR / PAGAR -->
+  <div class="section-title" style="margin-top:40px">Cuentas por Cobrar y por Pagar <span>Seguimiento semanal · en pesos</span></div>
+
+  <div id="cxEmpty" class="card" hidden>
+    <h2>Sin datos cargados todavía</h2>
+    <p class="subtitle" style="margin-bottom:0">Cuando se cargue la primera semana, acá aparecerán los saldos, la posición neta y su evolución.</p>
+  </div>
+
+  <div id="cxContent" hidden>
+    <div class="kpi-grid" id="cxKpis" style="grid-template-columns:repeat(4,1fr)"></div>
+
+    <div class="card">
+      <h2>Evolución semanal</h2>
+      <p class="subtitle">Saldo al cierre de cada semana · Posición neta = por cobrar − por pagar</p>
+      <div class="chart-wrap" style="height:320px"><canvas id="cxChart"></canvas></div>
+    </div>
+
+    <div class="card">
+      <h2>Detalle semanal</h2>
+      <p class="subtitle">Variaciones respecto de la semana anterior</p>
+      <table>
+        <thead><tr><th>Semana al</th><th>Por cobrar</th><th>Por pagar</th><th>Posición neta</th><th>Δ Por cobrar</th><th>Δ Por pagar</th><th>Δ Neta</th></tr></thead>
+        <tbody id="cxTbl"></tbody>
+      </table>
+    </div>
+  </div>
+
   <footer>Generado con Claude · Datos: Tks promedio diarios.xlsx · Actualizado al 15/10/2026</footer>
 </div>
 
@@ -972,6 +999,69 @@ effMeses.forEach((mes, i) => {
     </div></td>`;
   effTbody.appendChild(tr);
 });
+
+// ── CUENTAS POR COBRAR / POR PAGAR ─────────────────────────
+// Una fila por semana: fecha de corte (AAAA-MM-DD) y saldos en pesos.
+const cxData = [
+  { fecha: '2026-10-16', cobrar: 124957697.06, pagar: 393794028.54 },
+  // Próxima semana: { fecha: '2026-10-23', cobrar: 0, pagar: 0 },
+];
+
+(function renderCx() {
+  const rows = cxData.slice().sort((a, b) => a.fecha.localeCompare(b.fecha));
+  document.getElementById('cxEmpty').hidden = rows.length > 0;
+  document.getElementById('cxContent').hidden = rows.length === 0;
+  if (!rows.length) return;
+
+  const fDate = s => { const [y, m, d] = s.split('-'); return `${d}/${m}`; };
+  const fDelta = v => v === null ? '<span style="color:#c0c0c0">—</span>'
+    : `<span style="color:#607080">${v > 0 ? '▲ +' : v < 0 ? '▼ −' : ''}${fmtPesos(Math.abs(v))}</span>`;
+  const neto = rows.map(r => r.cobrar - r.pagar);
+  const last = rows.length - 1;
+  const dNeto = last > 0 ? neto[last] - neto[last - 1] : null;
+  const pctC = last > 0 && rows[last - 1].cobrar ? (rows[last].cobrar / rows[last - 1].cobrar - 1) * 100 : null;
+  const pctP = last > 0 && rows[last - 1].pagar ? (rows[last].pagar / rows[last - 1].pagar - 1) * 100 : null;
+  const sub = p => p === null ? `al ${fDate(rows[last].fecha)}` : `${p >= 0 ? '+' : ''}${p.toFixed(1).replace('.', ',')}% vs semana ant.`;
+
+  document.getElementById('cxKpis').innerHTML = `
+    <div class="kpi-card" style="--color:#6dc5b8"><div class="kpi-label">Por cobrar</div><div class="kpi-value" style="font-size:1.4rem">${fmtPesos(rows[last].cobrar)}</div><div class="kpi-sub">${sub(pctC)}</div></div>
+    <div class="kpi-card" style="--color:#ef8fa8"><div class="kpi-label">Por pagar</div><div class="kpi-value" style="font-size:1.4rem">${fmtPesos(rows[last].pagar)}</div><div class="kpi-sub">${sub(pctP)}</div></div>
+    <div class="kpi-card" style="--color:#1a2940"><div class="kpi-label">Posición neta</div><div class="kpi-value" style="font-size:1.4rem">${neto[last] < 0 ? '−' : ''}${fmtPesos(Math.abs(neto[last]))}</div><div class="kpi-sub">al ${fDate(rows[last].fecha)}</div></div>
+    <div class="kpi-card" style="--color:#7aabdb"><div class="kpi-label">Δ Neta semanal</div><div class="kpi-value" style="font-size:1.4rem">${dNeto === null ? '—' : (dNeto < 0 ? '−' : '+') + fmtPesos(Math.abs(dNeto))}</div><div class="kpi-sub">vs semana anterior</div></div>`;
+
+  document.getElementById('cxTbl').innerHTML = rows.map((r, i) => {
+    const p = i > 0 ? rows[i - 1] : null;
+    return `<tr><td><strong>${fDate(r.fecha)}</strong></td>
+      <td>${fmtPesos(r.cobrar)}</td><td>${fmtPesos(r.pagar)}</td>
+      <td><strong>${neto[i] < 0 ? '−' : ''}${fmtPesos(Math.abs(neto[i]))}</strong></td>
+      <td>${fDelta(p ? r.cobrar - p.cobrar : null)}</td>
+      <td>${fDelta(p ? r.pagar - p.pagar : null)}</td>
+      <td>${fDelta(p ? neto[i] - neto[i - 1] : null)}</td></tr>`;
+  }).reverse().join('');
+
+  new Chart(document.getElementById('cxChart'), {
+    type: 'line',
+    data: { labels: rows.map(r => fDate(r.fecha)), datasets: [
+      { label: 'Por cobrar', data: rows.map(r => r.cobrar), borderColor: '#6dc5b8', backgroundColor: '#6dc5b820', borderWidth: 2.5, pointRadius: 5, tension: 0.3 },
+      { label: 'Por pagar', data: rows.map(r => r.pagar), borderColor: '#ef8fa8', backgroundColor: '#ef8fa820', borderWidth: 2.5, pointRadius: 5, tension: 0.3 },
+      { label: 'Posición neta', data: neto, borderColor: '#1a2940', borderDash: [6, 4], borderWidth: 2, pointRadius: 4, tension: 0.3 }
+    ] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { position: 'bottom', labels: { usePointStyle: true, padding: 16, font: { size: 12 } } },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.raw < 0 ? '−' : ''}${fmtPesos(Math.abs(ctx.raw))}` } }
+      },
+      scales: {
+        y: { grid: { color: '#f0f2f5' }, ticks: { color: '#8090a0', callback: v => (v < 0 ? '−' : '') + '$' + (Math.abs(v) / 1000000).toFixed(0) + 'M' },
+             title: { display: true, text: 'Pesos', color: '#8090a0', font: { size: 12 } } },
+        x: { grid: { display: false }, ticks: { color: '#5060a0', font: { weight: '600' } },
+             title: { display: true, text: 'Semana al (día/mes)', color: '#8090a0', font: { size: 11 } } }
+      }
+    }
+  });
+})();
 </script>
 </body>
 </html>
